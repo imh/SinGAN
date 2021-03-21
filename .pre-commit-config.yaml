@@ -1,0 +1,68 @@
+repos:
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      # no whitespace at end of line
+      - id: trailing-whitespace
+      # file is empty or ends with newline
+      - id: end-of-file-fixer
+      # sorts requirements
+      - id: requirements-txt-fixer
+      # no code before docstrings
+      - id: check-docstring-first
+      # valid json
+      - id: check-json
+      # valid yaml
+      - id: check-yaml
+      # valid python file
+      - id: check-ast
+  - repo: git://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.9
+    hooks:
+      # NO TABS! but not replacing them, because sometimes that causes chaos
+      - id: forbid-tabs
+      # replace crls with lf line endings
+      - id: remove-crlf
+  - repo: https://github.com/pycqa/isort
+    rev: 5.7.0
+    hooks:
+        # Sorts imports by builtin, third party, and first party, then alphabetically
+      - id: isort
+        language_version: python3.7
+        args:
+          - "--multi-line=3"
+          - "--trailing-comma"
+          - "--force-grid-wrap=0"
+          - "--use-parentheses"
+          - "--ensure-newline-before-comments"
+          - "--line-length=88"
+          - "--force-sort-within-sections"
+  - repo: git://github.com/python/black
+    rev: 20.8b1
+    hooks:
+      # Automatically styles your code
+      - id: black
+        language_version: python3.7
+  - repo: git://github.com/pre-commit/mirrors-mypy
+    rev: v0.812
+    hooks:
+      # Type checking
+      - id: mypy
+#  - repo: git://github.com/PyCQA/pydocstyle
+#    rev: 5.1.1
+#    hooks:
+#      # Check whether your docs are written correctly-ish
+#      - id: pydocstyle
+#        language_version: python3.7
+#        args:
+#          ["--convention=numpy", "--add-ignore=D100,D101,D102,D103,D104,D105,D107"]
+# I'd like to get bits of pylint running automatically, but it's more prone to false
+# positives and more of a pain to set up. Hopefully I figure something out?
+#-   repo: local
+#    hooks:
+#    -   id: pylint
+#        name: pylint
+#        entry: python -m pylint.__main__
+#        language: system
+#        types: [python]
+##        args: ['--ignore']
