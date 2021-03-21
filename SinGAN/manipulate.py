@@ -1,6 +1,12 @@
+import os
+
 import imageio
+import matplotlib.pyplot as plt
 import numpy as np
+import torch.nn as nn
 import torch.utils.data
+
+from SinGAN import functions, imresize
 
 
 def generate_gif(

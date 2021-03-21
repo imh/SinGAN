@@ -1,6 +1,7 @@
 import math
 import os
 
+from loguru import logger
 import matplotlib.pyplot as plt
 import torch.nn as nn
 import torch.optim as optim

@@ -2,10 +2,10 @@ import math
 import os
 import random
 
+from loguru import logger
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 import numpy as np
-import scipy.io as sio
 from skimage import color, filters
 from skimage import io as img
 from skimage import morphology
