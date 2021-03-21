@@ -3,9 +3,7 @@ import os
 from loguru import logger
 
 import SinGAN.functions as functions
-from SinGAN.imresize import imresize
 from SinGAN.manipulate import SinGAN_generate
-
 from config import get_arguments
 
 if __name__ == "__main__":

@@ -13,8 +13,6 @@ from sklearn.cluster import KMeans
 import torch
 import torch.nn as nn
 
-# from skimage import morphology
-# from skimage import filters
 from SinGAN.imresize import imresize
 
 # custom weights initialization called on netG and netD

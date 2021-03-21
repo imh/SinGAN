@@ -3,7 +3,6 @@ import os
 from loguru import logger
 
 import SinGAN.functions as functions
-from SinGAN.imresize import imresize
 from SinGAN.manipulate import generate_gif
 from SinGAN.training import train
 from config import get_arguments

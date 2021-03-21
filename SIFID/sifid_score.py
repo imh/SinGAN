@@ -26,13 +26,10 @@ import os
 import pathlib
 
 from loguru import logger
-
-# from scipy.misc import imread
 from matplotlib.pyplot import imread
 import numpy as np
 from scipy import linalg
 import torch
-from torch.nn.functional import adaptive_avg_pool2d
 
 try:
     from tqdm import tqdm
@@ -42,12 +39,8 @@ except ImportError:
         return x
 
 
-import pickle
-
 from inception import InceptionV3
 import numpy
-import scipy
-import torchvision
 
 parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument("--path2real", type=str, help=("Path to the real images"))

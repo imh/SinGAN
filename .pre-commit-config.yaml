@@ -23,8 +23,18 @@ repos:
       - id: forbid-tabs
       # replace crls with lf line endings
       - id: remove-crlf
+  - repo: git://github.com/hadialqattan/pycln
+    rev: 0.0.1-beta.3
+    hooks:
+      - id: pycln
+        args:
+          # Expand wildcard star imports. It works if only if the module is importable.
+          - "--expand-stars"
+          # `--all` is currently buggy
+          #Remove all unused imports (not just those checked from side effects)
+#          - "--all"
   - repo: https://github.com/pycqa/isort
-    rev: 5.7.0
+    rev: 5.8.0
     hooks:
         # Sorts imports by builtin, third party, and first party, then alphabetically
       - id: isort
